@@ -15,6 +15,11 @@
     <meta property="og:description" content="24/7 Delhi escorts and private hotel visits near IGI Airport, Aerocity luxury hotels, Gurgaon, Noida, and Dwarka.">
     <meta property="og:site_name" content="Taniya Escorts">
 
+    <!-- Luxury Editorial Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Structured Data (LocalBusiness & FAQPage) -->
     <script type="application/ld+json">
     {
@@ -76,21 +81,25 @@
     </script>
 
     <style>
-        /* Modern Reset & Variables */
+        /* Modern Reset & Midnight Noir Variables */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
 
         :root {
-            --bg-color: #ffffff;
-            --text-color: #111111;
-            --accent-color: #000000;
-            --muted-gray: #666666;
-            --light-gray: #f5f5f7;
+            --bg-obsidian: #0B0B0D;
+            --bg-surface: #131317;
+            --bg-card: #18181D;
+            --gold-primary: #D4AF37;
+            --gold-light: #E8CC75;
+            --gold-border: rgba(212, 175, 55, 0.25);
+            --text-ivory: #F8F6F0;
+            --text-muted: #A6A39B;
             --whatsapp-color: #25D366;
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         html {
@@ -98,89 +107,127 @@
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            background-color: var(--bg-obsidian);
+            color: var(--text-ivory);
+            font-family: var(--font-sans);
+            line-height: 1.65;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Navigation */
+        /* Glassmorphic Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background-color: rgba(255, 255, 255, 0.98);
+            padding: 18px 8%;
+            background-color: rgba(11, 11, 13, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #eee;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            border-bottom: 1px solid var(--gold-border);
         }
 
         .logo {
-            font-size: 20px;
-            font-weight: 800;
+            font-family: var(--font-serif);
+            font-size: 24px;
+            font-weight: 700;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: var(--text-color);
+            color: var(--gold-primary);
             text-decoration: none;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 32px;
         }
 
         .nav-links a {
-            color: var(--text-color);
+            color: var(--text-ivory);
             text-decoration: none;
             text-transform: uppercase;
             font-size: 12px;
             font-weight: 600;
             letter-spacing: 2px;
             transition: color 0.3s ease;
+            position: relative;
+            padding-bottom: 4px;
         }
 
-        .nav-links a:hover {
-            color: var(--muted-gray);
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--gold-primary);
         }
 
-        /* Hero Section */
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--gold-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Editorial Hero Section */
         .hero {
-            min-height: 75vh;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(255,255,255,0.68), rgba(255,255,255,0.85)), url('https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-            padding: 50px 8%;
-            margin-top: 65px;
+            background: radial-gradient(circle at center, rgba(20, 18, 14, 0.65) 0%, rgba(11, 11, 13, 0.94) 100%),
+                        url('image (1).jpeg') no-repeat center top/cover;
+            padding: 80px 8%;
+            margin-top: 68px;
+            border-bottom: 1px solid var(--gold-border);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #D4AF37 0%, #B58E22 100%);
+            color: #0B0B0D;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            padding: 8px 22px;
+            border-radius: 50px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
         }
 
         .hero h1 {
-            font-size: 32px;
+            font-family: var(--font-serif);
+            font-size: 46px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
             font-weight: 700;
-            color: #111111;
-            max-width: 900px;
-            line-height: 1.35;
+            color: var(--gold-light);
+            max-width: 920px;
+            line-height: 1.2;
         }
 
         .hero-lead {
             font-size: 16px;
-            letter-spacing: 0.3px;
-            margin-bottom: 30px;
+            letter-spacing: 0.2px;
+            margin-bottom: 36px;
             font-weight: 400;
-            color: #222222;
-            max-width: 780px;
-            line-height: 1.7;
+            color: #E2DFD7;
+            max-width: 760px;
+            line-height: 1.75;
         }
 
         .hero-buttons {
@@ -191,52 +238,69 @@
         }
 
         .btn {
-            display: inline-block;
-            padding: 16px 40px;
-            color: #fff;
-            background-color: var(--accent-color);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 36px;
+            color: var(--gold-light);
+            background-color: rgba(212, 175, 55, 0.08);
+            border: 1px solid var(--gold-primary);
             text-decoration: none;
             text-transform: uppercase;
             font-size: 12px;
-            font-weight: bold;
+            font-weight: 700;
             letter-spacing: 2px;
             transition: all 0.3s ease;
-            text-align: center;
-            border-radius: 2px;
+            border-radius: 4px;
         }
 
         .btn:hover {
-            background-color: #333;
+            background-color: var(--gold-primary);
+            color: #0B0B0D;
             transform: translateY(-2px);
         }
 
         .btn-wa {
             background-color: var(--whatsapp-color);
+            border-color: var(--whatsapp-color);
+            color: #ffffff;
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.28);
         }
 
         .btn-wa:hover {
             background-color: #20ba5a;
+            border-color: #20ba5a;
+            color: #ffffff;
         }
 
         /* Sections General */
         section {
-            padding: 80px 8%;
+            padding: 85px 8%;
             max-width: 1600px;
             margin: 0 auto;
         }
 
+        .section-dark-alt {
+            background-color: var(--bg-surface);
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
         .section-title {
+            font-family: var(--font-serif);
             text-align: center;
-            font-size: 26px;
+            font-size: 36px;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 16px;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
             font-weight: 700;
+            color: var(--gold-light);
         }
 
         .section-subtitle {
             text-align: center;
-            color: var(--muted-gray);
+            color: var(--text-muted);
             margin-bottom: 50px;
             font-size: 14px;
             letter-spacing: 1px;
@@ -255,23 +319,26 @@
         }
 
         .content-text h2 {
-            font-size: 24px;
+            font-family: var(--font-serif);
+            font-size: 34px;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 14px;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+            color: var(--gold-light);
         }
 
         .content-text h3 {
             text-transform: uppercase;
-            font-size: 15px;
+            font-size: 14px;
             margin-bottom: 20px;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             font-weight: 600;
+            color: var(--gold-primary);
         }
 
         .content-text p {
             font-size: 15px;
-            color: var(--muted-gray);
+            color: var(--text-muted);
             margin-bottom: 20px;
         }
 
@@ -284,29 +351,46 @@
         }
 
         .feature-item {
-            background-color: var(--light-gray);
-            padding: 20px;
+            background-color: var(--bg-card);
+            padding: 22px 24px;
             font-size: 13px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-left: 3px solid var(--accent-color);
+            color: var(--text-ivory);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-left: 3px solid var(--gold-primary);
+            border-radius: 4px;
+            transition: transform 0.25s ease, border-color 0.25s ease;
         }
 
-        /* Responsive Model Roster Catalog */
+        .feature-item:hover {
+            transform: translateY(-2px);
+            border-color: var(--gold-border);
+        }
+
+        /* Luxury Gallery Cards */
         .models-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
+            gap: 28px;
         }
 
         .model-card {
             position: relative;
             overflow: hidden;
-            background-color: #fff;
-            border: 1px solid #eee;
+            background-color: var(--bg-card);
+            border: 1px solid rgba(212, 175, 55, 0.16);
+            border-radius: 6px;
             display: flex;
             flex-direction: column;
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .model-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-primary);
+            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.6);
         }
 
         .model-img {
@@ -317,52 +401,82 @@
         }
 
         .model-card:hover .model-img {
-            transform: scale(1.02);
+            transform: scale(1.03);
         }
 
         .model-info {
-            padding: 15px;
+            padding: 16px 18px;
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            background: #fff;
-            border-top: 1px solid #f9f9f9;
+            align-items: center;
+            background: var(--bg-card);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .model-name {
-            font-size: 14px;
+            font-family: var(--font-serif);
+            font-size: 20px;
             text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 1px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--text-ivory);
         }
 
         .model-cat {
-            font-size: 11px;
+            font-size: 10px;
             text-transform: uppercase;
-            color: var(--muted-gray);
+            color: var(--gold-primary);
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold-border);
+            padding: 4px 10px;
+            border-radius: 50px;
             letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .model-book-btn {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background-color: rgba(212, 175, 55, 0.08);
+            color: var(--gold-light);
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .model-book-btn:hover {
+            background-color: var(--gold-primary);
+            color: #0B0B0D;
         }
 
         /* Locations and Service Columns */
         .services-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 28px;
         }
 
         .service-card {
-            border: 1px solid #eee;
-            padding: 30px;
-            background: #fff;
+            border: 1px solid rgba(212, 175, 55, 0.18);
+            border-radius: 6px;
+            padding: 32px;
+            background: var(--bg-card);
         }
 
         .service-card h3 {
-            font-size: 18px;
+            font-family: var(--font-serif);
+            font-size: 22px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #111;
-            padding-bottom: 10px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--gold-border);
+            padding-bottom: 12px;
+            color: var(--gold-light);
         }
 
         .service-card ul {
@@ -372,76 +486,93 @@
         .service-card li {
             font-size: 14px;
             margin-bottom: 12px;
-            color: var(--muted-gray);
+            color: var(--text-muted);
             position: relative;
             padding-left: 20px;
         }
 
         .service-card li::before {
-            content: "•";
+            content: "✦";
             position: absolute;
             left: 0;
-            color: var(--accent-color);
+            color: var(--gold-primary);
+            font-size: 11px;
         }
 
         .location-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
             gap: 15px;
             margin-top: 30px;
         }
 
         .location-tag {
-            background: var(--light-gray);
-            padding: 15px 10px;
+            background: var(--bg-card);
+            border: 1px solid var(--gold-border);
+            color: var(--text-ivory);
+            padding: 16px 12px;
             text-align: center;
             font-size: 12px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
+            border-radius: 4px;
+            transition: border-color 0.3s ease, color 0.3s ease;
         }
 
-        /* FAQ Accordion Layout */
+        .location-tag:hover {
+            border-color: var(--gold-primary);
+            color: var(--gold-light);
+        }
+
+        /* FAQ Layout */
         .faq-section {
-            max-width: 800px;
+            max-width: 820px;
             margin: 0 auto;
         }
 
         .faq-item {
-            margin-bottom: 25px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 15px;
+            margin-bottom: 20px;
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 6px;
+            padding: 22px 26px;
         }
 
         .faq-question {
             font-size: 15px;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 8px;
+            color: var(--gold-light);
         }
 
         .faq-answer {
             font-size: 14px;
-            color: var(--muted-gray);
+            color: var(--text-muted);
         }
 
         /* Action Panels */
         .action-panel {
-            background-color: var(--light-gray);
+            background: linear-gradient(145deg, #16161B 0%, #0F0F12 100%);
+            border: 1px solid var(--gold-border);
+            border-radius: 8px;
             text-align: center;
-            padding: 50px 30px;
-            margin-top: 20px;
+            padding: 60px 30px;
+            margin-top: 10px;
         }
 
         .action-panel h3 {
-            font-size: 20px;
+            font-family: var(--font-serif);
+            font-size: 32px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
+            color: var(--gold-light);
         }
 
-        /* Cross-Platform Floating WhatsApp System */
+        /* Floating WhatsApp Button */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -455,28 +586,29 @@
             justify-content: center;
             align-items: center;
             text-decoration: none;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
             z-index: 9999;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .whatsapp-float:hover {
             transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 8px 28px rgba(37, 211, 102, 0.6);
             background-color: #20ba5a;
         }
 
         .whatsapp-icon {
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
             fill: #ffffff;
         }
 
-        /* Footer Layout split */
+        /* Footer Layout */
         footer {
-            background-color: #111;
-            padding: 60px 8% 30px 8%;
-            color: #999;
+            background-color: #070709;
+            border-top: 1px solid var(--gold-border);
+            padding: 65px 8% 30px 8%;
+            color: var(--text-muted);
             font-size: 13px;
         }
 
@@ -488,10 +620,10 @@
         }
 
         .footer-col h4 {
-            color: #fff;
+            color: var(--gold-primary);
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 13px;
+            font-size: 12px;
             margin-bottom: 20px;
         }
 
@@ -504,42 +636,44 @@
         }
 
         .footer-col a {
-            color: #999;
+            color: var(--text-muted);
             text-decoration: none;
+            transition: color 0.2s ease;
         }
 
         .footer-col a:hover {
-            color: #fff;
+            color: var(--gold-light);
         }
 
         .footer-bottom {
             text-align: center;
-            border-top: 1px solid #222;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             padding-top: 25px;
             font-size: 11px;
             letter-spacing: 1px;
+            color: #777;
         }
 
-        /* Breakpoints for Mobile Compatibility */
+        /* Mobile Breakpoints */
         @media (max-width: 992px) {
-            nav { padding: 20px 5%; }
-            section { padding: 60px 5%; }
+            nav { padding: 18px 5%; }
+            section { padding: 65px 5%; }
+            .hero h1 { font-size: 36px; }
         }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
             nav { justify-content: center; }
-            .hero { min-height: auto; padding: 60px 20px; margin-top: 60px; }
-            .hero h1 { font-size: 22px; line-height: 1.35; margin-bottom: 14px; }
-            .hero-lead { font-size: 14px; line-height: 1.65; margin-bottom: 25px; }
-            .hero-buttons { flex-direction: column; width: 100%; max-width: 280px; }
+            .hero { min-height: auto; padding: 65px 20px; margin-top: 62px; }
+            .hero h1 { font-size: 28px; line-height: 1.28; margin-bottom: 16px; }
+            .hero-lead { font-size: 14px; line-height: 1.65; margin-bottom: 28px; }
+            .hero-buttons { flex-direction: column; width: 100%; max-width: 290px; }
             .btn { width: 100%; padding: 15px 20px; }
-            .section-title { font-size: 22px; letter-spacing: 2px; }
-            .models-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; }
-            .model-img { height: 240px; }
-            .model-info { flex-direction: column; gap: 4px; padding: 10px; }
-            .model-name { font-size: 12px; }
-            .model-cat { font-size: 10px; }
+            .section-title { font-size: 26px; letter-spacing: 2px; }
+            .models-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; }
+            .model-img { height: 245px; }
+            .model-info { flex-direction: column; align-items: flex-start; gap: 6px; padding: 12px; }
+            .model-name { font-size: 16px; }
             .services-layout { grid-template-columns: 1fr; }
             .whatsapp-float {
                 bottom: 20px;
@@ -548,8 +682,8 @@
                 height: 55px;
             }
             .whatsapp-icon {
-                width: 28px;
-                height: 28px;
+                width: 26px;
+                height: 26px;
             }
         }
     </style>
@@ -573,6 +707,7 @@
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero" aria-label="Introduction">
+            <span class="hero-badge">24/7 Aerocity &amp; IGI Airport Concierge</span>
             <h1>Delhi Escorts &amp; Private Hotel Visits in Aerocity</h1>
             <p class="hero-lead">Taniya Escorts offers trusted Delhi escorts and discreet companionship near IGI Airport. We serve hotel guests at JW Marriott, Roseate House, Pullman, Andaz, and Holiday Inn Aerocity, plus Gurgaon and Noida. Fast WhatsApp booking is open 24/7.</p>
             <div class="hero-buttons">
@@ -586,14 +721,14 @@
             <h2 class="section-title">Delhi Escorts &amp; Hotel Visits</h2>
             <p class="section-subtitle">Private Arrangements Across New Delhi and NCR</p>
 
-            <div style="max-width: 820px; margin: 0 auto; text-align: center; color: var(--muted-gray); font-size: 15px; line-height: 1.75;">
+            <div style="max-width: 820px; margin: 0 auto; text-align: center; color: var(--text-muted); font-size: 15px; line-height: 1.75;">
                 <p style="margin-bottom: 18px;">We arrange private hotel visits in Aerocity, Gurgaon, Noida, Connaught Place, and Dwarka. Our team assists travelers and hotel guests with smooth timing and discreet entry.</p>
                 <p>Whether you fly into New Delhi for business or stay for the weekend, our booking desk replies quickly on WhatsApp day and night.</p>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" style="background-color: var(--light-gray);">
+        <section id="about" class="section-dark-alt">
             <div class="content-block">
                 <div class="content-text" style="max-width: 780px; margin: 0 auto; text-align: center;">
                     <h2>About Us</h2>
@@ -622,7 +757,7 @@
         </section>
 
         <!-- Models Gallery Section (30 Items) -->
-        <section id="models" style="background-color: var(--light-gray);">
+        <section id="models" class="section-dark-alt">
             <h2 class="section-title">Explore Gallery</h2>
             <p class="section-subtitle">Browse current Delhi escorts available for hotel visits in Aerocity and nearby NCR.</p>
 
@@ -633,6 +768,7 @@
                         <span class="model-name">Aarohi</span>
                         <span class="model-cat">Aerocity</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Aarohi%20(Aerocity)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Aarohi</a>
                 </div>
 
                 <div class="model-card">
@@ -641,6 +777,7 @@
                         <span class="model-name">Riya</span>
                         <span class="model-cat">New Delhi</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Riya%20(New%20Delhi)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Riya</a>
                 </div>
 
                 <div class="model-card">
@@ -649,6 +786,7 @@
                         <span class="model-name">Ananya</span>
                         <span class="model-cat">Gurgaon</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Ananya%20(Gurgaon)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Ananya</a>
                 </div>
 
                 <div class="model-card">
@@ -657,6 +795,7 @@
                         <span class="model-name">Kavya</span>
                         <span class="model-cat">South Delhi</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Kavya%20(South%20Delhi)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Kavya</a>
                 </div>
 
                 <div class="model-card">
@@ -665,6 +804,7 @@
                         <span class="model-name">Meera</span>
                         <span class="model-cat">Aerocity</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Meera%20(Aerocity)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Meera</a>
                 </div>
 
                 <div class="model-card">
@@ -673,6 +813,7 @@
                         <span class="model-name">Simran</span>
                         <span class="model-cat">Dwarka</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Simran%20(Dwarka)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Simran</a>
                 </div>
 
                 <div class="model-card">
@@ -681,6 +822,7 @@
                         <span class="model-name">Nisha</span>
                         <span class="model-cat">VIP</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Nisha%20(VIP)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Nisha</a>
                 </div>
 
                 <div class="model-card">
@@ -689,6 +831,7 @@
                         <span class="model-name">Pooja</span>
                         <span class="model-cat">Noida</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Pooja%20(Noida)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Pooja</a>
                 </div>
 
                 <div class="model-card">
@@ -697,6 +840,7 @@
                         <span class="model-name">Tanya</span>
                         <span class="model-cat">Aerocity</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Tanya%20(Aerocity)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Tanya</a>
                 </div>
 
                 <div class="model-card">
@@ -705,6 +849,7 @@
                         <span class="model-name">Sneha</span>
                         <span class="model-cat">Central Delhi</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Sneha%20(Central%20Delhi)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Sneha</a>
                 </div>
 
                 <div class="model-card">
@@ -713,6 +858,7 @@
                         <span class="model-name">Diya</span>
                         <span class="model-cat">New Delhi</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Diya%20(New%20Delhi)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Diya</a>
                 </div>
 
                 <div class="model-card">
@@ -721,6 +867,7 @@
                         <span class="model-name">Isha</span>
                         <span class="model-cat">Aerocity</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Isha%20(Aerocity)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Isha</a>
                 </div>
 
                 <div class="model-card">
@@ -729,6 +876,7 @@
                         <span class="model-name">Neha</span>
                         <span class="model-cat">Gurgaon</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Neha%20(Gurgaon)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Neha</a>
                 </div>
 
                 <div class="model-card">
@@ -737,6 +885,7 @@
                         <span class="model-name">Kiara</span>
                         <span class="model-cat">NCR</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Kiara%20(NCR)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Kiara</a>
                 </div>
 
                 <div class="model-card">
@@ -745,6 +894,7 @@
                         <span class="model-name">Sana</span>
                         <span class="model-cat">Aerocity</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Sana%20(Aerocity)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Sana</a>
                 </div>
 
                 <div class="model-card">
@@ -753,6 +903,7 @@
                         <span class="model-name">Priya</span>
                         <span class="model-cat">Dwarka</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Priya%20(Dwarka)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Priya</a>
                 </div>
 
                 <div class="model-card">
@@ -761,6 +912,7 @@
                         <span class="model-name">Kriti</span>
                         <span class="model-cat">VIP</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Kriti%20(VIP)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Kriti</a>
                 </div>
 
                 <div class="model-card">
@@ -769,6 +921,7 @@
                         <span class="model-name">Shruti</span>
                         <span class="model-cat">Noida</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Shruti%20(Noida)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Shruti</a>
                 </div>
 
                 <div class="model-card">
@@ -777,6 +930,7 @@
                         <span class="model-name">Palak</span>
                         <span class="model-cat">Aerocity</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Palak%20(Aerocity)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Palak</a>
                 </div>
 
                 <div class="model-card">
@@ -785,6 +939,7 @@
                         <span class="model-name">Manya</span>
                         <span class="model-cat">South Delhi</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Manya%20(South%20Delhi)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Manya</a>
                 </div>
 
                 <div class="model-card">
@@ -793,6 +948,7 @@
                         <span class="model-name">Aditi</span>
                         <span class="model-cat">New Delhi</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Aditi%20(New%20Delhi)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Aditi</a>
                 </div>
 
                 <div class="model-card">
@@ -801,6 +957,7 @@
                         <span class="model-name">Zara</span>
                         <span class="model-cat">Aerocity</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Zara%20(Aerocity)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Zara</a>
                 </div>
 
                 <div class="model-card">
@@ -809,6 +966,7 @@
                         <span class="model-name">Tara</span>
                         <span class="model-cat">Gurgaon</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Tara%20(Gurgaon)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Tara</a>
                 </div>
 
                 <div class="model-card">
@@ -817,6 +975,7 @@
                         <span class="model-name">Mahi</span>
                         <span class="model-cat">NCR</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Mahi%20(NCR)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Mahi</a>
                 </div>
 
                 <div class="model-card">
@@ -825,6 +984,7 @@
                         <span class="model-name">Divya</span>
                         <span class="model-cat">Aerocity</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Divya%20(Aerocity)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Divya</a>
                 </div>
 
                 <div class="model-card">
@@ -833,6 +993,7 @@
                         <span class="model-name">Kajal</span>
                         <span class="model-cat">Dwarka</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Kajal%20(Dwarka)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Kajal</a>
                 </div>
 
                 <div class="model-card">
@@ -841,6 +1002,7 @@
                         <span class="model-name">Alisha</span>
                         <span class="model-cat">VIP</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Alisha%20(VIP)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Alisha</a>
                 </div>
 
                 <div class="model-card">
@@ -849,6 +1011,7 @@
                         <span class="model-name">Muskan</span>
                         <span class="model-cat">Noida</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Muskan%20(Noida)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Muskan</a>
                 </div>
 
                 <div class="model-card">
@@ -857,6 +1020,7 @@
                         <span class="model-name">Lavanya</span>
                         <span class="model-cat">Aerocity</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Lavanya%20(Aerocity)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Lavanya</a>
                 </div>
 
                 <div class="model-card">
@@ -865,6 +1029,7 @@
                         <span class="model-name">Nandini</span>
                         <span class="model-cat">Central Delhi</span>
                     </div>
+                    <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20would%20like%20to%20inquire%20about%20Nandini%20(Central%20Delhi)." class="model-book-btn" target="_blank" rel="noopener noreferrer">Book Nandini</a>
                 </div>
             </div>
         </section>
@@ -874,8 +1039,8 @@
             <h2 class="section-title">Hotel Locations</h2>
             <p class="section-subtitle">Aerocity &amp; IGI Airport Hotels</p>
 
-            <div style="max-width: 760px; margin: 0 auto; text-align: center; margin-bottom: 40px; color: var(--muted-gray); font-size: 15px;">
-                <p style="margin-bottom: 12px; font-weight: 600; text-transform: uppercase; color: #111;">Popular Aerocity Hotels</p>
+            <div style="max-width: 760px; margin: 0 auto; text-align: center; margin-bottom: 40px; color: var(--text-muted); font-size: 15px;">
+                <p style="margin-bottom: 12px; font-weight: 600; text-transform: uppercase; color: var(--gold-light); letter-spacing: 1.5px;">Popular Aerocity Hotels</p>
                 <p>We arrange discreet hotel visits for guests staying at major Aerocity properties and nearby airport hotels.</p>
             </div>
 
@@ -891,14 +1056,14 @@
         </section>
 
         <!-- Services Detailed Section -->
-        <section id="services" style="background-color: var(--light-gray);">
+        <section id="services" class="section-dark-alt">
             <h2 class="section-title">Our Services</h2>
             <p class="section-subtitle">Easy booking steps, clear chat, and 24/7 WhatsApp help.</p>
 
             <div class="services-layout">
                 <div class="service-card">
                     <h3>Hotel Visits</h3>
-                    <p style="font-size: 14px; color: var(--muted-gray); margin-bottom: 20px;">Direct hotel visits for guests near IGI Airport and central business hubs.</p>
+                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">Direct hotel visits for guests near IGI Airport and central business hubs.</p>
                     <ul>
                         <li>Private hotel arrival.</li>
                         <li>Fast WhatsApp reply.</li>
@@ -909,7 +1074,7 @@
 
                 <div class="service-card">
                     <h3>Dinner &amp; Evening Out</h3>
-                    <p style="font-size: 14px; color: var(--muted-gray); margin-bottom: 20px;">Good company for dinner, drinks, or relaxed evenings in New Delhi.</p>
+                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">Good company for dinner, drinks, or relaxed evenings in New Delhi.</p>
                     <ul>
                         <li>Polite, easygoing company.</li>
                         <li>Great for business trips.</li>
@@ -920,7 +1085,7 @@
 
                 <div class="service-card">
                     <h3>24/7 Privacy &amp; Care</h3>
-                    <p style="font-size: 14px; color: var(--muted-gray); margin-bottom: 20px;">Every chat and booking stays private from start to finish.</p>
+                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">Every chat and booking stays private from start to finish.</p>
                     <ul>
                         <li>No chat logs shared.</li>
                         <li>Clear, honest details.</li>
@@ -930,9 +1095,9 @@
                 </div>
             </div>
 
-            <div class="service-card" style="margin-top: 40px;">
+            <div class="service-card" style="margin-top: 30px;">
                 <h3>How Booking Works</h3>
-                <p style="font-size: 14px; color: var(--muted-gray); margin-bottom: 20px;">Send a WhatsApp message with your pick, hotel area, and time. Share your hotel name and arrival time so we can confirm right away.</p>
+                <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">Send a WhatsApp message with your pick, hotel area, and time. Share your hotel name and arrival time so we can confirm right away.</p>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
                     <ul>
                         <li>1. Pick a profile from the gallery.</li>
@@ -975,14 +1140,14 @@
         </section>
 
         <!-- Other Locations Section -->
-        <section style="background-color: var(--light-gray);">
+        <section class="section-dark-alt">
             <h2 class="section-title">Other NCR Locations</h2>
             <p class="section-subtitle">We also cover key hubs across NCR</p>
             <div class="location-grid" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
-                <div class="location-tag" style="background:#fff;">Dwarka.</div>
-                <div class="location-tag" style="background:#fff;">Noida.</div>
-                <div class="location-tag" style="background:#fff;">Gurgaon.</div>
-                <div class="location-tag" style="background:#fff;">Mahipalpur.</div>
+                <div class="location-tag">Dwarka.</div>
+                <div class="location-tag">Noida.</div>
+                <div class="location-tag">Gurgaon.</div>
+                <div class="location-tag">Mahipalpur.</div>
             </div>
         </section>
 
@@ -990,7 +1155,7 @@
         <section>
             <div class="action-panel">
                 <h3>Ready to Book in Aerocity?</h3>
-                <p style="font-size: 15px; color: var(--muted-gray); max-width: 650px; margin: 0 auto 30px auto;">Message us on WhatsApp to check live availability in Aerocity, Gurgaon, Noida, or Dwarka.</p>
+                <p style="font-size: 15px; color: var(--text-muted); max-width: 650px; margin: 0 auto 32px auto;">Message us on WhatsApp to check live availability in Aerocity, Gurgaon, Noida, or Dwarka.</p>
 
                 <a href="https://wa.me/919485850474?text=Hello%20Taniya%20Escorts!%20I%20want%20to%20make%20a%20private%20booking%20in%20Delhi%20Aerocity." class="btn btn-wa" style="font-size: 13px;" target="_blank" rel="noopener noreferrer">Contact On WhatsApp</a>
             </div>
